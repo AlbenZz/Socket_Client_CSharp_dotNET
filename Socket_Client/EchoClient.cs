@@ -21,9 +21,6 @@ namespace Socket_Client
         public Int16 TCP_Port { get; set; }
 
 
-        testc()
-
-
         
         public void SetupSocket() { }
 
