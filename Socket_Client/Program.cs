@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.Net;
 using System.Net.Sockets;
 
-namespace Socket_Client
+namespace SocketClient
 {
     class Program
     {
@@ -16,4 +17,7 @@ namespace Socket_Client
 
         }
     }
+
+
+
 }

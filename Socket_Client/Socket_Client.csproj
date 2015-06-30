@@ -7,7 +7,7 @@
     <ProjectGuid>{4B33094A-2482-4EBE-B3F0-88D1A2C016FB}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Socket_Client</RootNamespace>
+    <RootNamespace>SocketClient</RootNamespace>
     <AssemblyName>Socket_Client</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -30,6 +31,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>SocketClient.CenterClientTester</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -41,12 +45,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AspofDns.cs" />
+    <Compile Include="ClientAsResponder.cs" />
     <Compile Include="EchoClient.cs" />
+    <Compile Include="MessageDEncoders\IItemQuoteProcotolDEncoder.cs" />
+    <Compile Include="MessageDEncoders\ItemQuoteBinDEncoder.cs" />
+    <Compile Include="MessageDEncoders\TVLForPassengerRecordDEncoder.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProtocolFormats\ItemQuoteProtocolFormat.cs" />
+    <Compile Include="CenterClient.cs" />
+    <Compile Include="ProtocolFormats\TVLForPassengerRecord.cs" />
+    <Compile Include="QuoteClient.cs" />
+    <Compile Include="Utilities\ByteOrderConverter.cs" />
+    <Compile Include="Utilities\StateReminder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MessageFramers\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
